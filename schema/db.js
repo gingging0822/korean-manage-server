@@ -3,7 +3,7 @@ const dbConfig = require('../config/config');
 
 console.log('init sequelize...');
 
-var sequelize = new Sequelize(dbConfig.dbname, dbConfig.username, dbConfig.password, {
+var sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
     host: dbConfig.host,
     dialect: 'mysql',
     pool: {
