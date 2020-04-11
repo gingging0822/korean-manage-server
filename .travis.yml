@@ -10,7 +10,7 @@ install:
  - yarn install
  
 script:
- - npm start
+ - npm run build
  
 deploy:
   provider: pages
