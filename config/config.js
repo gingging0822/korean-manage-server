@@ -13,10 +13,8 @@ if (process.env.NODE_ENV === 'test') {
     console.log(`Load ${defaultConfig}...`);
     config = require(defaultConfig);
     try {
-        if (fs.statSync(overrideConfig).isFile()) {
-            console.log(`Load ${overrideConfig}...`);
-            config = Object.assign(config, require(overrideConfig));
-        }
+        console.log(`Load ${overrideConfig}...`);
+        config = require(defaultConfig);
     } catch (err) {
         console.log(`Cannot load ${overrideConfig}.`);
     }
