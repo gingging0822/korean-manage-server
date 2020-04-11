@@ -1,18 +1,8 @@
-/**
-├── models
-    └── user.js
-*/
+const model = require('./model');
 
-// 引入刚刚在第五点建立连接mysql数据库的db.js文件
-const db = require('../config/db');
-// 引入Sequelize对象
-const Sequelize = db.sequelize;
-// 引入上一步的用户数据表模型文件
-const Word = Sequelize.import('../schema/word');
-const Example = Sequelize.import('../schema/example');
-// 自动创建表
-Word.sync({ force: false });
-Example.sync({ force: false });
+let Word = model.Word;
+let Example = model.Example;
+
 class WordModel {
     /**
      * 创建单词模型

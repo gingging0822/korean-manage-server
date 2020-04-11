@@ -1,7 +1,3 @@
-/**
-├── controllers
-    └── word.js
-*/
 const wordModel = require('../models/word')
 class WordController {
     /**
