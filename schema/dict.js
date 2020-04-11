@@ -1,12 +1,12 @@
-//字典表
+//字典
 const db = require('./db');
-module.exports = db.defineModel('example', {
+module.exports = db.defineModel('dict', {
     //key
     key: {
-        type: DataTypes.STRING,
+        type: db.STRING,
     },
     //value
     value: {
-        type: DataTypes.STRING
+        type: db.STRING
     }
 });

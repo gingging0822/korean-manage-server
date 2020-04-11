@@ -3,6 +3,8 @@ const dbConfig = require('../config/config');
 
 console.log('init sequelize...');
 
+const ID_TYPE = Sequelize.STRING(50);
+
 var sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
     host: dbConfig.host,
     dialect: 'mysql',
@@ -13,9 +15,7 @@ var sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.pas
     }
 });
 
-const ID_TYPE = Sequelize.STRING(50);
-
-function defineModel(name, attributes) {
+Sequelize.defineModel = function (name, attributes) {
     var attrs = {};
     for (let key in attributes) {
         let value = attributes[key];
@@ -68,3 +68,5 @@ function defineModel(name, attributes) {
         }
     });
 }
+
+module.exports = Sequelize

@@ -1,6 +1,6 @@
 const model = require('./model');
 
-let Word = model.Word;
+let Word = model.word;
 let Example = model.Example;
 
 class WordModel {

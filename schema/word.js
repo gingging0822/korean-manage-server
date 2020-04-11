@@ -3,33 +3,33 @@ const db = require('./db');
 module.exports = db.defineModel('word', {
     //单词
     word: {
-        type: DataTypes.STRING,
+        type: db.STRING,
         allowNull: false,
         primaryKey: true
     },
     //音标
     phoneticSymbol: {
-        type: DataTypes.STRING
+        type: db.STRING
     },
     //等级
     level: {
-        type: DataTypes.STRING
+        type: db.STRING
     },
     //释义
     description: {
-        type: DataTypes.STRING
+        type: db.STRING
     },
     //背景图
     backgroundImage: {
-        type: DataTypes.STRING
+        type: db.STRING
     },
     //音频
     voice: {
-        type: DataTypes.STRING
+        type: db.STRING
     },
     //固定搭配
     fixedMatch: {
-        type: DataTypes.STRING(2000),
+        type: db.STRING,
         get() {
             return JSON.parse(this.getDataValue('fixedMatch'));
         }
